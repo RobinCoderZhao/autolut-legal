@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Privacy Policy for Original Image Lightyear (原画光年).">
+  <title>Original Image Lightyear — Privacy Policy</title>
+  <link rel="stylesheet" href="../assets/site.css">
+  <script defer src="../assets/site.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner header-row">
+      <div>
+        <h1 class="brand">Original Image Lightyear · 原画光年</h1>
+        <p class="subtitle">Privacy Policy / 隐私政策</p>
+      </div>
+      <nav class="language-switcher" aria-label="Language">
+        <button type="button" data-language-button="en" aria-pressed="true">English</button>
+        <button type="button" data-language-button="zh-Hans" aria-pressed="false">简体中文</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="language-content" data-language="en">
+      <p class="meta"><strong>Effective date:</strong> August 19, 2026</p>
+
+      <h2>1. Introduction</h2>
+      <p>Original Image Lightyear (the “App,” Chinese name “原画光年”) is an iOS, iPadOS, and macOS Log-video restoration and color-processing application developed by Robin (“we,” “us,” or “our”). This Privacy Policy explains how information is processed when you use the App.</p>
+      <div class="notice"><strong>Privacy summary:</strong> the App is local-first. We do not operate an account, media, analytics, or quota server. We do not receive your videos, LUTs, editing recipes, or payment credentials.</div>
+
+      <h2>2. Information processed on your device</h2>
+      <p>The App may process the following information locally to provide features you request:</p>
+      <table>
+        <thead><tr><th>Information</th><th>Purpose</th><th>Storage</th></tr></thead>
+        <tbody>
+          <tr><td>Videos and audio you select</td><td>Import, compatibility inspection, preview, Log restoration, color processing, and export</td><td>Managed working copies, temporary render files, and user-chosen exports</td></tr>
+          <tr><td>Media metadata</td><td>Interpret color range, matrix, transfer function, camera or Log identity, timing, orientation, audio, and export metadata</td><td>Local workspace and recovery records where needed</td></tr>
+          <tr><td>User LUTs, presets, and editing recipes</td><td>Apply and restore your selected looks and processing configuration</td><td>Local application storage</td></tr>
+          <tr><td>Workspace and recovery state</td><td>Resume the current task, recover interrupted exports, and keep local libraries consistent</td><td>Local SQLite database and Application Support files</td></tr>
+          <tr><td>Export allowance events</td><td>Maintain the 30-successful-export free allowance and reconcile it across your Apple devices when the system permits</td><td>Apple Keychain, with limited records described below</td></tr>
+          <tr><td>StoreKit purchase evidence</td><td>Display products, purchase or restore Pro, and determine subscription or Lifetime Pro access</td><td>Verified StoreKit state and minimal local purchase-recovery state</td></tr>
+        </tbody>
+      </table>
+
+      <h2>3. Photos and Files access</h2>
+      <h3>Photos</h3>
+      <p>You choose videos through Apple's system photo picker. To preserve original media quality and metadata, the App may request Photo Library read/write permission and use the identifier of the item you selected to resolve its original video resource through Apple's Photos framework. The App does not use that permission to browse or upload unselected media.</p>
+      <p>If the selected original exists only in iCloud Photos, Apple may download it to your device. That transfer is provided by Apple and is governed by your Apple account, device settings, and Apple's privacy terms.</p>
+      <h3>Files</h3>
+      <p>You may select videos and LUTs through Apple's system Files picker. The App accesses only the items you select and any security-scoped access granted by the operating system for those items.</p>
+
+      <h2>4. Local storage and retention</h2>
+      <ul>
+        <li><strong>Working copies:</strong> imported media is copied into App-managed storage so the selected source can remain unchanged. Working copies may remain while the current task is active or recoverable.</li>
+        <li><strong>Temporary files:</strong> previews, candidate renders, and delivery files are stored temporarily and removed after success, failure, cancellation, or recovery cleanup, subject to normal operating-system behavior.</li>
+        <li><strong>Presets and LUTs:</strong> user-created presets and imported LUTs remain until you delete them or remove the App's local data.</li>
+        <li><strong>Workspace data:</strong> completing or replacing a session removes related managed work files when they are no longer needed. Uninstalling the App removes its local container, subject to Apple's platform behavior.</li>
+        <li><strong>Exports:</strong> successfully delivered videos remain wherever you chose to save them until you delete them.</li>
+      </ul>
+
+      <h2>5. Free-export allowance and iCloud Keychain</h2>
+      <p>Free users currently receive 30 successful full-quality exports. To record delivered exports, the App stores a minimal, append-only event in the system Keychain. Each event contains a random export-job identifier, policy/schema information, an App-family identifier, and commit time. It does not contain the filename, file path, Photos asset identifier, video metadata, camera profile, LUT, editing recipe, or media content.</p>
+      <p>If iCloud Keychain is enabled, Apple may eventually synchronize these Keychain items among your eligible iPhone, iPad, and Mac devices signed in to the same Apple account. The App does not actively contact an account or quota server, cannot read your Apple ID, and cannot force or guarantee when Apple completes synchronization. Devices can therefore show temporarily different remaining counts while offline or before Keychain convergence. Reinstalling the App does not guarantee that the allowance resets.</p>
+
+      <h2>6. Purchases and subscriptions</h2>
+      <p>Purchases are provided by Apple StoreKit. Apple processes payment credentials, billing, storefront pricing, taxes, subscription management, refunds, and purchase history under Apple's terms and privacy policy. The App receives verified product and entitlement information needed to display products and grant Pro access. We do not receive your card number or Apple account password.</p>
+
+      <h2>7. Information we do not collect</h2>
+      <ul>
+        <li>No developer-operated user account or registration.</li>
+        <li>No advertising SDK, advertising identifier, or cross-app tracking.</li>
+        <li>No developer-operated analytics or crash-reporting service.</li>
+        <li>No upload of source media, exported media, LUTs, presets, or editing recipes to us.</li>
+        <li>No sale, rental, or trade of personal information.</li>
+      </ul>
+
+      <h2>8. Apple services and third parties</h2>
+      <p>The App relies on operating-system services including App Store/StoreKit, Photos, Files, iCloud Photos when applicable, and iCloud Keychain when enabled. Apple may process information necessary to provide those services under Apple's own policies. We do not operate an independent backend that receives that information.</p>
+
+      <h2>9. Your controls</h2>
+      <ul>
+        <li>You choose which videos, files, and LUTs the App may access.</li>
+        <li>You can change Photos permission in system Settings, although original-quality import may stop working without the required access.</li>
+        <li>You can remove current tasks, presets, LUTs, and exported files using available App or system controls.</li>
+        <li>You can uninstall the App to remove its local container. Keychain records and files already exported outside the container may remain under Apple's platform behavior and your own storage choices.</li>
+        <li>You can manage subscriptions and purchases through your Apple account and the App Store.</li>
+      </ul>
+
+      <h2>10. Security</h2>
+      <p>The App uses Apple's sandbox, system permission controls, StoreKit verification, and Keychain protection. No method of storage is completely secure, so you should keep important source media backed up and protect access to your devices and Apple account.</p>
+
+      <h2>11. Children's privacy</h2>
+      <p>The App is not directed to children under 13 and does not require a developer-operated account. We do not knowingly collect children's personal information through a developer-operated service.</p>
+
+      <h2>12. Changes to this policy</h2>
+      <p>We may update this policy when the App's features, data practices, or legal requirements change. The current version will be posted on this page with a revised effective date.</p>
+
+      <h2>13. Contact</h2>
+      <p>For questions about this Privacy Policy, contact:</p>
+      <div class="contact-box"><a href="mailto:414108176@qq.com">414108176@qq.com</a></div>
+    </article>
+
+    <article class="language-content" data-language="zh-Hans" hidden>
+      <p class="meta"><strong>生效日期：</strong>2026 年 8 月 19 日</p>
+
+      <h2>1. 简介</h2>
+      <p>原画光年（英文名 Original Image Lightyear，以下简称“本应用”）是由 Robin（以下简称“我们”）开发的 iOS、iPadOS 与 macOS Log 视频还原和色彩处理应用。本隐私政策说明您使用本应用时，相关信息会如何被处理。</p>
+      <div class="notice"><strong>隐私摘要：</strong>本应用采用本地优先架构。我们不运营用户账户、媒体、分析或额度服务器，也不会收到您的视频、LUT、编辑配方或付款凭证。</div>
+
+      <h2>2. 在设备本地处理的信息</h2>
+      <p>为提供您主动使用的功能，本应用可能在设备本地处理以下信息：</p>
+      <table>
+        <thead><tr><th>信息</th><th>用途</th><th>存储方式</th></tr></thead>
+        <tbody>
+          <tr><td>您选择的视频与音频</td><td>导入、兼容性检查、预览、Log 还原、色彩处理和导出</td><td>受管理的工作副本、临时渲染文件和您选择保存的导出文件</td></tr>
+          <tr><td>媒体元数据</td><td>解析色彩范围、矩阵、传递函数、相机或 Log 身份、时间、方向、音频和导出元数据</td><td>必要时保存在本地工作区与恢复记录中</td></tr>
+          <tr><td>用户 LUT、预设与编辑配方</td><td>应用并恢复您选择的风格和处理配置</td><td>本地应用存储</td></tr>
+          <tr><td>工作区与恢复状态</td><td>恢复当前任务、中断的导出，以及保持本地资源库一致</td><td>本地 SQLite 数据库和 Application Support 文件</td></tr>
+          <tr><td>导出额度事件</td><td>维护 30 次成功免费导出额度，并在系统允许时在您的 Apple 设备间最终对账</td><td>Apple 钥匙串；仅包含下文说明的有限记录</td></tr>
+          <tr><td>StoreKit 购买凭证</td><td>展示商品、购买或恢复 Pro，并判断订阅或永久 Pro 权益</td><td>经 StoreKit 验证的状态和最少量本地购买恢复状态</td></tr>
+        </tbody>
+      </table>
+
+      <h2>3. 照片与文件访问</h2>
+      <h3>照片</h3>
+      <p>您通过 Apple 的系统照片选择器选择视频。为了保留原始媒体质量和元数据，本应用可能请求照片图库读写权限，并使用您所选项目的标识，通过 Apple Photos 框架解析该项目的原始视频资源。本应用不会利用该权限浏览或上传您未选择的媒体。</p>
+      <p>如果所选原件只存在于 iCloud 照片中，Apple 可能将其下载到您的设备。该传输由 Apple 提供，并受您的 Apple 账户、设备设置和 Apple 隐私条款约束。</p>
+      <h3>文件</h3>
+      <p>您可以通过 Apple 的系统文件选择器选择视频和 LUT。本应用只访问您主动选择的项目，以及操作系统针对这些项目授予的安全作用域权限。</p>
+
+      <h2>4. 本地存储与保留</h2>
+      <ul>
+        <li><strong>工作副本：</strong>导入的媒体会复制到应用管理的存储中，使所选源文件保持不变。当前任务处于活动或可恢复状态时，工作副本可能继续保留。</li>
+        <li><strong>临时文件：</strong>预览、候选渲染和交付文件会临时保存，并在成功、失败、取消或恢复清理后删除，但仍受操作系统正常行为影响。</li>
+        <li><strong>预设与 LUT：</strong>用户创建的预设和导入的 LUT 会保留到您主动删除或移除本应用本地数据。</li>
+        <li><strong>工作区数据：</strong>完成或替换会话后，本应用会在不再需要时清理相关工作文件。卸载应用会按照 Apple 平台行为移除本地应用容器。</li>
+        <li><strong>导出文件：</strong>成功交付的视频会保留在您选择的保存位置，直至您主动删除。</li>
+      </ul>
+
+      <h2>5. 免费导出额度与 iCloud 钥匙串</h2>
+      <p>免费用户当前可成功导出 30 个完整质量文件。为记录已交付的导出，本应用会在系统钥匙串中保存一条最小化、仅追加的事件。每条事件只包含随机导出任务标识、策略/架构信息、应用家族标识和提交时间，不包含文件名、文件路径、Photos 资产标识、视频元数据、相机配置、LUT、编辑配方或媒体内容。</p>
+      <p>如果您开启了 iCloud 钥匙串，Apple 可能最终将这些钥匙串项目同步到使用同一 Apple 账户登录的合资格 iPhone、iPad 和 Mac。本应用不会主动连接账户或额度服务器，无法读取您的 Apple ID，也无法强制或保证 Apple 何时完成同步。因此，设备离线或钥匙串尚未收敛时，不同设备可能暂时显示不同的剩余额度。重新安装本应用并不保证免费额度会重置。</p>
+
+      <h2>6. 购买与订阅</h2>
+      <p>应用内购买由 Apple StoreKit 提供。付款凭证、账单、商店价格、税费、订阅管理、退款和购买历史由 Apple 按其条款和隐私政策处理。本应用只接收展示商品和授予 Pro 权益所需的经验证商品及权益信息。我们不会收到您的银行卡号或 Apple 账户密码。</p>
+
+      <h2>7. 我们不收集的信息</h2>
+      <ul>
+        <li>不提供由开发者运营的用户账户或注册系统。</li>
+        <li>不使用广告 SDK、广告标识符或跨应用跟踪。</li>
+        <li>不使用由开发者运营的分析或崩溃上报服务。</li>
+        <li>不会向我们上传源媒体、导出媒体、LUT、预设或编辑配方。</li>
+        <li>不会出售、出租或交易个人信息。</li>
+      </ul>
+
+      <h2>8. Apple 服务与第三方</h2>
+      <p>本应用依赖 App Store/StoreKit、Photos、Files，以及适用时的 iCloud 照片和 iCloud 钥匙串等操作系统服务。Apple 可能按照其自身政策处理提供这些服务所需的信息。我们不运营接收这些信息的独立后端。</p>
+
+      <h2>9. 您的控制权</h2>
+      <ul>
+        <li>由您决定本应用可以访问哪些视频、文件和 LUT。</li>
+        <li>您可以在系统设置中更改照片权限，但缺少所需权限时，原始质量导入可能无法工作。</li>
+        <li>您可以通过本应用或系统提供的控制删除当前任务、预设、LUT 和导出文件。</li>
+        <li>您可以卸载本应用以移除其本地容器。按照 Apple 平台行为，钥匙串记录和已导出到容器外的文件可能继续保留。</li>
+        <li>您可以通过 Apple 账户和 App Store 管理订阅与购买。</li>
+      </ul>
+
+      <h2>10. 安全</h2>
+      <p>本应用使用 Apple 沙盒、系统权限控制、StoreKit 验证和钥匙串保护。任何存储方式都无法保证绝对安全，因此请备份重要源媒体，并保护您的设备和 Apple 账户。</p>
+
+      <h2>11. 儿童隐私</h2>
+      <p>本应用并非面向 13 岁以下儿童，也不要求创建开发者账户。我们不会通过开发者运营的服务故意收集儿童个人信息。</p>
+
+      <h2>12. 政策变更</h2>
+      <p>当应用功能、数据处理方式或法律要求发生变化时，我们可能更新本政策。当前版本会发布在本页面，并更新生效日期。</p>
+
+      <h2>13. 联系我们</h2>
+      <p>如对本隐私政策有疑问，请联系：</p>
+      <div class="contact-box"><a href="mailto:414108176@qq.com">414108176@qq.com</a></div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a data-language-link href="../">Support / 支持</a>
+        <a data-language-link href="./terms.html">Terms / 条款</a>
+      </div>
+      <div>© 2026 Robin. Original Image Lightyear / 原画光年.</div>
+    </div>
+  </footer>
+</body>
+</html>
