@@ -1,6 +1,6 @@
-# Original Image Lightyear / 原画光年 Legal Pages
+# HUEO / 原画光年 Legal Pages
 
-Static bilingual support and legal pages for **Original Image Lightyear (原画光年)**.
+Static bilingual support and legal pages for **HUEO (原画光年)**.
 
 ## Pages
 
@@ -44,4 +44,4 @@ the App before release.
 - Re-review the pages whenever analytics, accounts, cloud storage, networking, permissions, export
   quota, or purchase behavior changes.
 
-Effective date of the included policies: **August 19, 2026**.
+Effective date of the included policies: **August 21, 2026**.
