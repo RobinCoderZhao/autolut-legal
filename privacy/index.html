@@ -24,19 +24,22 @@
 
   <main>
     <article class="language-content" data-language="en">
-      <p class="meta"><strong>Effective date:</strong> August 21, 2026</p>
+      <p class="meta"><strong>Effective date:</strong> September 10, 2026</p>
 
       <h2>1. Introduction</h2>
-      <p>HUEO (the “App,” Chinese name “原画光年”) is an iOS, iPadOS, and macOS Log-video restoration and color-processing application developed by Robin (“we,” “us,” or “our”). This Privacy Policy explains how information is processed when you use the App.</p>
-      <div class="notice"><strong>Privacy summary:</strong> the App is local-first. We do not operate an account, media, analytics, or quota server. We do not receive your videos, LUTs, editing recipes, or payment credentials.</div>
+      <p>HUEO (the “App,” Chinese name “原画光年”) is an iOS, iPadOS, and macOS application developed by Robin (“we,” “us,” or “our”). It provides Log-video restoration and color processing, video-to-Live-Photo creation, and import of supported external-device media into Photos. This Privacy Policy explains how information is processed when you use the App.</p>
+      <div class="notice"><strong>Privacy summary:</strong> the App is local-first. We do not operate an account, media, analytics, or quota server. The App does not automatically send us your media, LUTs, editing recipes, or diagnostics. We do not receive payment credentials. You decide whether to share a diagnostic package or other information when contacting support.</div>
 
       <h2>2. Information processed on your device</h2>
       <p>The App may process the following information locally to provide features you request:</p>
       <table>
         <thead><tr><th>Information</th><th>Purpose</th><th>Storage</th></tr></thead>
         <tbody>
-          <tr><td>Videos and audio you select</td><td>Import, compatibility inspection, preview, Log restoration, color processing, and export</td><td>Managed working copies, temporary render files, and user-chosen exports</td></tr>
-          <tr><td>Media metadata</td><td>Interpret color range, matrix, transfer function, camera or Log identity, timing, orientation, audio, and export metadata</td><td>Local workspace and recovery records where needed</td></tr>
+          <tr><td>Videos and audio you select</td><td>Import, compatibility inspection, preview, Log restoration, color processing, export, and video-to-Live-Photo creation</td><td>Managed working copies, temporary render files, and user-chosen exports</td></tr>
+          <tr><td>Media metadata</td><td>Interpret color, camera or Log identity, timing, orientation, and audio; read available capture time and embedded location for supported import and output workflows</td><td>Local workspace and recovery records where needed</td></tr>
+          <tr><td>External-device photos, videos, Live Photo resources, and thumbnails</td><td>Browse the directory you authorize, preview supported items, and import the items you choose into Photos</td><td>Source files remain on the device; thumbnails and preparation copies are cached locally</td></tr>
+          <tr><td>External-device access and import records</td><td>Restore authorized access, identify previously imported items, and recover interrupted imports</td><td>Local access bookmarks, device/content fingerprints, and import-recovery records</td></tr>
+          <tr><td>Local diagnostics</td><td>Investigate interruptions and performance problems</td><td>Redacted stage records, session markers, and filtered Apple MetricKit reports; see section 4</td></tr>
           <tr><td>User LUTs, presets, and editing recipes</td><td>Apply and restore your selected looks and processing configuration</td><td>Local application storage</td></tr>
           <tr><td>Workspace and recovery state</td><td>Resume the current task, recover interrupted exports, and keep local libraries consistent</td><td>Local SQLite database and Application Support files</td></tr>
           <tr><td>Export allowance events</td><td>Maintain the 30-successful-export free allowance and reconcile it across your Apple devices when the system permits</td><td>Apple Keychain, with limited records described below</td></tr>
@@ -46,10 +49,14 @@
 
       <h2>3. Photos and Files access</h2>
       <h3>Photos</h3>
-      <p>You choose videos through Apple's system photo picker. To preserve original media quality and metadata, the App may request Photo Library read/write permission and use the identifier of the item you selected to resolve its original video resource through Apple's Photos framework. The App does not use that permission to browse or upload unselected media.</p>
-      <p>If the selected original exists only in iCloud Photos, Apple may download it to your device. That transfer is provided by Apple and is governed by your Apple account, device settings, and Apple's privacy terms.</p>
+      <p>You choose videos through Apple's system photo picker. To preserve original media quality and metadata, the App may request Photo Library read/write permission and use the identifier of the item you selected to resolve its original video resource through Apple's Photos framework. The video-to-Live-Photo picker also uses Photos read access to display the videos, thumbnails, duration, dimensions, and capture dates available within your authorization. With limited access, only the items permitted by the system are available. Original video resources are imported for processing after you select them; the App does not upload your library to us.</p>
+      <p>When browsing or selecting media stored in iCloud Photos, Apple may download thumbnails or the selected original resource to your device. That transfer is provided by Apple and is governed by your Apple account, device settings, and Apple's privacy terms.</p>
+      <p>Saving an exported video, a generated Live Photo, or selected external-device media requests Photos add permission. External-device import does not request full-library read access for duplicate checking. Video-to-Live-Photo recovery may check a previously created item if full read access was already granted.</p>
       <h3>Files</h3>
-      <p>You may select videos and LUTs through Apple's system Files picker. The App accesses only the items you select and any security-scoped access granted by the operating system for those items.</p>
+      <p>You may select videos and LUTs through Apple's system Files picker. The App accesses the selected items within the access granted by the operating system.</p>
+      <h3>External devices and capture metadata</h3>
+      <p>For Import to Photos, you authorize a device or directory through the system directory picker. The App searches for supported photos, videos, and Live Photo resources within that directory and its permitted subdirectories. It does not search outside that scope or modify, move, rename, or delete the source files. Only the items you select and start importing are added to Photos.</p>
+      <p>Available capture time, embedded location, and other media metadata may be read locally and retained in supported imported or generated media. This reads existing media metadata; the App does not request the device's current location or record GPS tracks. It cannot reconstruct information missing from the source. Review media metadata before sharing an output that may contain capture time or location.</p>
 
       <h2>4. Local storage and retention</h2>
       <ul>
@@ -57,8 +64,15 @@
         <li><strong>Temporary files:</strong> previews, candidate renders, and delivery files are stored temporarily and removed after success, failure, cancellation, or recovery cleanup, subject to normal operating-system behavior.</li>
         <li><strong>Presets and LUTs:</strong> user-created presets and imported LUTs remain until you delete them or remove the App's local data.</li>
         <li><strong>Workspace data:</strong> completing or replacing a session removes related managed work files when they are no longer needed. Uninstalling the App removes its local container, subject to Apple's platform behavior.</li>
-        <li><strong>Exports:</strong> successfully delivered videos remain wherever you chose to save them until you delete them.</li>
+        <li><strong>External-device import:</strong> authorization bookmarks, local import fingerprints, and recovery records remain in App storage to support reconnection and interrupted imports. Thumbnail disk caching has a 200 MiB limit. Temporary import copies, extracted Live Photo resources, and preview clips are cleaned up after completion, failure, cancellation, or a later launch.</li>
+        <li><strong>Saved results:</strong> delivered videos, photos, and Live Photos remain in Photos or your chosen destination until you delete them. If iCloud Photos is enabled, Apple may synchronize items saved to Photos under your system settings.</li>
       </ul>
+
+      <h3 id="diagnostics-en">Local diagnostics and optional sharing</h3>
+      <p>The App keeps a bounded local record of processing stages, session and incident times, random session identifiers, hashed item tokens, resource pressure, counts, and error codes. Apple MetricKit reports are filtered before storage to retain numeric performance and crash information plus App/build, operating-system, architecture, and binary details needed for troubleshooting. Other free text is removed.</p>
+      <p>Diagnostic records and packages exclude media, thumbnails, user media filenames and paths, capture times, locations, camera/lens strings, Photos identifiers, and access bookmarks. Import-recovery information included in a package is reduced to batch phases, state/error counts, and recovery-status information.</p>
+      <p>Incident cleanup applies limits of 20 records, 30 days, and 50 MiB. Diagnostic storage is excluded from system backup. Diagnostics are not automatically uploaded. In <strong>Settings &gt; Diagnostics</strong>, you can prepare a ZIP and then choose whether to share or save it using the system share sheet. Temporary diagnostic ZIPs older than 24 hours are cleaned up when the App starts or you prepare another package; the system may remove temporary files earlier.</p>
+      <p><strong>Delete Local Diagnostics</strong> removes the App's local diagnostic records and temporary packages without deleting media or import history/recovery records. Copies you have already saved or sent outside the App must be managed separately. If you contact support, we receive the contact details, message, and attachments you choose to send and use them to respond and investigate the issue.</p>
 
       <h2>5. Free-export allowance and iCloud Keychain</h2>
       <p>Free users currently receive 30 successful full-quality exports. To record delivered exports, the App stores a minimal, append-only event in the system Keychain. Each event contains a random export-job identifier, policy/schema information, an App-family identifier, and commit time. It does not contain the filename, file path, Photos asset identifier, video metadata, camera profile, LUT, editing recipe, or media content.</p>
@@ -72,19 +86,23 @@
         <li>No developer-operated user account or registration.</li>
         <li>No advertising SDK, advertising identifier, or cross-app tracking.</li>
         <li>No developer-operated analytics or crash-reporting service.</li>
-        <li>No upload of source media, exported media, LUTs, presets, or editing recipes to us.</li>
+        <li>No automatic upload of media, LUTs, presets, editing recipes, or diagnostics to us; support sharing is your choice.</li>
         <li>No sale, rental, or trade of personal information.</li>
       </ul>
 
       <h2>8. Apple services and third parties</h2>
       <p>The App relies on operating-system services including App Store/StoreKit, Photos, Files, iCloud Photos when applicable, and iCloud Keychain when enabled. Apple may process information necessary to provide those services under Apple's own policies. We do not operate an independent backend that receives that information.</p>
 
+      <p><strong>More Imaging Tools</strong> in Settings displays a bundled list of apps by the same developer. It does not detect installed apps, record views or clicks, or use your media or location to choose recommendations. An App Store link opens only when you tap it and contains no user, device, media, location, or attribution identifier. Downloads and purchases for those apps are separate.</p>
+      <p>Opening support, legal, or App Store links uses your browser or Apple's services. Contacting support or sharing a diagnostic package uses the mail or sharing service you choose; that service handles the information you send under its own policies.</p>
+
       <h2>9. Your controls</h2>
       <ul>
-        <li>You choose which videos, files, and LUTs the App may access.</li>
+        <li>You choose which videos, files, LUTs, and external-device directories the App may access, and control the Photos access available to its video picker.</li>
         <li>You can change Photos permission in system Settings, although original-quality import may stop working without the required access.</li>
         <li>You can remove current tasks, presets, LUTs, and exported files using available App or system controls.</li>
         <li>You can uninstall the App to remove its local container. Keychain records and files already exported outside the container may remain under Apple's platform behavior and your own storage choices.</li>
+        <li>You can prepare, share, or delete local diagnostics in Settings &gt; Diagnostics. Preparing a package does not send it to us.</li>
         <li>You can manage subscriptions and purchases through your Apple account and the App Store.</li>
       </ul>
 
@@ -103,19 +121,22 @@
     </article>
 
     <article class="language-content" data-language="zh-Hans" hidden>
-      <p class="meta"><strong>生效日期：</strong>2026 年 8 月 21 日</p>
+      <p class="meta"><strong>生效日期：</strong>2026 年 9 月 10 日</p>
 
       <h2>1. 简介</h2>
-      <p>原画光年（英文名 HUEO，以下简称“本应用”）是由 Robin（以下简称“我们”）开发的 iOS、iPadOS 与 macOS Log 视频还原和色彩处理应用。本隐私政策说明您使用本应用时，相关信息会如何被处理。</p>
-      <div class="notice"><strong>隐私摘要：</strong>本应用采用本地优先架构。我们不运营用户账户、媒体、分析或额度服务器，也不会收到您的视频、LUT、编辑配方或付款凭证。</div>
+      <p>原画光年（英文名 HUEO，以下简称“本应用”）是由 Robin（以下简称“我们”）开发的 iOS、iPadOS 与 macOS 应用，提供 Log 视频还原和色彩处理、视频转 Live Photo，以及将受支持的外接设备媒体导入系统相册等功能。本隐私政策说明您使用本应用时，相关信息会如何被处理。</p>
+      <div class="notice"><strong>隐私摘要：</strong>本应用采用本地优先架构。我们不运营用户账户、媒体、分析或额度服务器。本应用不会自动向我们发送媒体、LUT、编辑配方或诊断内容；我们不会收到付款凭证。联系支持时，是否分享诊断包或其他信息由您决定。</div>
 
       <h2>2. 在设备本地处理的信息</h2>
       <p>为提供您主动使用的功能，本应用可能在设备本地处理以下信息：</p>
       <table>
         <thead><tr><th>信息</th><th>用途</th><th>存储方式</th></tr></thead>
         <tbody>
-          <tr><td>您选择的视频与音频</td><td>导入、兼容性检查、预览、Log 还原、色彩处理和导出</td><td>受管理的工作副本、临时渲染文件和您选择保存的导出文件</td></tr>
-          <tr><td>媒体元数据</td><td>解析色彩范围、矩阵、传递函数、相机或 Log 身份、时间、方向、音频和导出元数据</td><td>必要时保存在本地工作区与恢复记录中</td></tr>
+          <tr><td>您选择的视频与音频</td><td>导入、兼容性检查、预览、Log 还原、色彩处理、导出和视频转 Live Photo</td><td>受管理的工作副本、临时渲染文件和您选择保存的导出文件</td></tr>
+          <tr><td>媒体元数据</td><td>解析色彩、相机或 Log 身份、时间、方向及音频，并为受支持的导入和输出流程读取可用的拍摄时间与媒体内嵌位置</td><td>必要时保存在本地工作区与恢复记录中</td></tr>
+          <tr><td>外接设备照片、视频、Live Photo 资源与缩略图</td><td>浏览您授权的目录、预览受支持的项目，并将您选择的项目导入系统相册</td><td>源文件保留在设备上；缩略图和准备副本在本地缓存</td></tr>
+          <tr><td>外接设备访问与导入记录</td><td>恢复授权访问、识别本机已导入项目，以及恢复中断的导入</td><td>本地授权书签、设备及内容指纹、导入恢复记录</td></tr>
+          <tr><td>本地诊断</td><td>排查中断和性能问题</td><td>脱敏阶段记录、会话标记和经过筛选的 Apple MetricKit 报告；详见第 4 节</td></tr>
           <tr><td>用户 LUT、预设与编辑配方</td><td>应用并恢复您选择的风格和处理配置</td><td>本地应用存储</td></tr>
           <tr><td>工作区与恢复状态</td><td>恢复当前任务、中断的导出，以及保持本地资源库一致</td><td>本地 SQLite 数据库和 Application Support 文件</td></tr>
           <tr><td>导出额度事件</td><td>维护 30 次成功免费导出额度，并在系统允许时在您的 Apple 设备间最终对账</td><td>Apple 钥匙串；仅包含下文说明的有限记录</td></tr>
@@ -125,10 +146,14 @@
 
       <h2>3. 照片与文件访问</h2>
       <h3>照片</h3>
-      <p>您通过 Apple 的系统照片选择器选择视频。为了保留原始媒体质量和元数据，本应用可能请求照片图库读写权限，并使用您所选项目的标识，通过 Apple Photos 框架解析该项目的原始视频资源。本应用不会利用该权限浏览或上传您未选择的媒体。</p>
-      <p>如果所选原件只存在于 iCloud 照片中，Apple 可能将其下载到您的设备。该传输由 Apple 提供，并受您的 Apple 账户、设备设置和 Apple 隐私条款约束。</p>
+      <p>您通过 Apple 的系统照片选择器选择视频。为了保留原始媒体质量和元数据，本应用可能请求照片图库读写权限，并使用您所选项目的标识，通过 Apple Photos 框架解析该项目的原始视频资源。“视频转 Live Photo”的选择页面也会使用照片读取权限，在您的授权范围内展示视频、缩略图、时长、尺寸和拍摄日期。使用有限访问权限时，只能访问系统允许的项目。您选定视频后，应用才导入原始视频资源进行处理；不会向我们上传您的照片图库。</p>
+      <p>浏览或选择存储在 iCloud 照片中的媒体时，Apple 可能将缩略图或所选原始资源下载到您的设备。该传输由 Apple 提供，并受您的 Apple 账户、设备设置和 Apple 隐私条款约束。</p>
+      <p>保存导出视频、生成的 Live Photo 或所选外接设备媒体时，会请求照片添加权限。外接设备导入不会为了去重请求完整图库读取权限。视频转 Live Photo 的恢复流程仅在已获得完整读取权限时，才可能核对先前创建的项目。</p>
       <h3>文件</h3>
-      <p>您可以通过 Apple 的系统文件选择器选择视频和 LUT。本应用只访问您主动选择的项目，以及操作系统针对这些项目授予的安全作用域权限。</p>
+      <p>您可以通过 Apple 的系统文件选择器选择视频和 LUT。本应用在操作系统授予的访问范围内读取这些项目。</p>
+      <h3>外接设备与拍摄元数据</h3>
+      <p>使用“导入相册”时，您通过系统目录选择器授权设备或目录。本应用只在该目录及允许访问的子目录内查找受支持的照片、视频和 Live Photo 资源，不会搜索授权范围外的目录，也不会修改、移动、重命名或删除源文件。只有您选定并开始导入的项目才会写入系统相册。</p>
+      <p>可用的拍摄时间、媒体内嵌位置及其他元数据可能在本地读取，并保留到受支持的导入或生成结果中。这是读取已有媒体元数据；本应用不会请求设备当前位置或记录 GPS 轨迹，也无法重建源文件缺失的信息。分享可能带有拍摄时间或位置的结果前，请检查其元数据。</p>
 
       <h2>4. 本地存储与保留</h2>
       <ul>
@@ -136,8 +161,15 @@
         <li><strong>临时文件：</strong>预览、候选渲染和交付文件会临时保存，并在成功、失败、取消或恢复清理后删除，但仍受操作系统正常行为影响。</li>
         <li><strong>预设与 LUT：</strong>用户创建的预设和导入的 LUT 会保留到您主动删除或移除本应用本地数据。</li>
         <li><strong>工作区数据：</strong>完成或替换会话后，本应用会在不再需要时清理相关工作文件。卸载应用会按照 Apple 平台行为移除本地应用容器。</li>
-        <li><strong>导出文件：</strong>成功交付的视频会保留在您选择的保存位置，直至您主动删除。</li>
+        <li><strong>外接设备导入：</strong>授权书签、本机导入指纹和恢复记录保存在应用存储中，用于重新连接和恢复中断的导入。缩略图磁盘缓存上限为 200 MiB。导入临时副本、拆分的 Live Photo 资源和预览片段，会在完成、失败、取消或后续启动时清理。</li>
+        <li><strong>保存结果：</strong>成功交付的视频、照片和 Live Photo 会保留在系统相册或您选择的位置，直至您删除。启用 iCloud 照片时，Apple 可能根据系统设置同步已保存到相册的项目。</li>
       </ul>
+
+      <h3 id="diagnostics-zh-Hans">本地诊断与自愿分享</h3>
+      <p>本应用在本地保存容量受限的处理阶段记录、会话和异常时间、随机会话标识、散列项目标记、资源压力、计数和错误码。Apple MetricKit 报告会在保存前筛选，仅保留数值性能与崩溃信息，以及排查所需的应用版本、构建号、操作系统、架构和二进制程序信息；其他自由文本会被移除。</p>
+      <p>诊断记录及诊断包不包含媒体、缩略图、用户媒体文件名及路径、拍摄时间、位置、相机或镜头字符串、Photos 标识或授权书签。诊断包中的导入恢复信息只保留批次阶段、状态和错误计数，以及恢复状态信息。</p>
+      <p>异常记录按 20 条、30 天和 50 MiB 的上限执行清理，并排除系统备份。诊断不会自动上传。您可以在<strong>“设置 &gt; 诊断”</strong>中准备 ZIP，然后通过系统分享面板自行决定是否分享或保存。超过 24 小时的临时诊断 ZIP 会在应用启动或再次准备诊断包时清理；系统也可能提前回收临时文件。</p>
+      <p><strong>“删除本地诊断”</strong>会删除应用内的诊断记录和临时诊断包，不会删除媒体、导入历史或导入恢复记录。已经另存或发送到应用之外的副本需由您另行管理。联系支持时，我们会收到您主动发送的联系方式、消息和附件，并用于回复及排查该问题。</p>
 
       <h2>5. 免费导出额度与 iCloud 钥匙串</h2>
       <p>免费用户当前可成功导出 30 个完整质量文件。为记录已交付的导出，本应用会在系统钥匙串中保存一条最小化、仅追加的事件。每条事件只包含随机导出任务标识、策略/架构信息、应用家族标识和提交时间，不包含文件名、文件路径、Photos 资产标识、视频元数据、相机配置、LUT、编辑配方或媒体内容。</p>
@@ -151,19 +183,23 @@
         <li>不提供由开发者运营的用户账户或注册系统。</li>
         <li>不使用广告 SDK、广告标识符或跨应用跟踪。</li>
         <li>不使用由开发者运营的分析或崩溃上报服务。</li>
-        <li>不会向我们上传源媒体、导出媒体、LUT、预设或编辑配方。</li>
+        <li>不会自动向我们上传媒体、LUT、预设、编辑配方或诊断；是否向支持人员分享由您决定。</li>
         <li>不会出售、出租或交易个人信息。</li>
       </ul>
 
       <h2>8. Apple 服务与第三方</h2>
       <p>本应用依赖 App Store/StoreKit、Photos、Files，以及适用时的 iCloud 照片和 iCloud 钥匙串等操作系统服务。Apple 可能按照其自身政策处理提供这些服务所需的信息。我们不运营接收这些信息的独立后端。</p>
 
+      <p>设置中的<strong>“更多影像工具”</strong>展示随应用内置的同一开发者应用列表，不检测其他应用是否安装，不记录展示或点击，也不使用您的媒体或位置筛选推荐。只有您点击后才会打开 App Store 链接，链接不包含用户、设备、媒体、位置或归因标识。其他应用的下载与购买相互独立。</p>
+      <p>打开支持、法律文档或 App Store 链接时，会使用浏览器或 Apple 服务。联系支持或分享诊断包时，会使用您选择的邮件或分享服务；该服务会按照自身政策处理您发送的信息。</p>
+
       <h2>9. 您的控制权</h2>
       <ul>
-        <li>由您决定本应用可以访问哪些视频、文件和 LUT。</li>
+        <li>由您选择本应用可以访问的视频、文件、LUT 和外接设备目录，并控制视频选择页面可用的照片读取范围。</li>
         <li>您可以在系统设置中更改照片权限，但缺少所需权限时，原始质量导入可能无法工作。</li>
         <li>您可以通过本应用或系统提供的控制删除当前任务、预设、LUT 和导出文件。</li>
         <li>您可以卸载本应用以移除其本地容器。按照 Apple 平台行为，钥匙串记录和已导出到容器外的文件可能继续保留。</li>
+        <li>您可以在“设置 &gt; 诊断”中准备、分享或删除本地诊断；准备诊断包不会向我们发送该文件。</li>
         <li>您可以通过 Apple 账户和 App Store 管理订阅与购买。</li>
       </ul>
 

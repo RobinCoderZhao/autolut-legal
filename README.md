@@ -11,14 +11,14 @@ Static bilingual support and legal pages for **HUEO (原画光年)**.
 The pages support English and Simplified Chinese. They select a language from `?lang=en` or
 `?lang=zh-Hans`, then fall back to the browser language.
 
-## Recommended GitHub Pages setup
+## Publishing
 
-1. Create a public repository named `autolut-legal` under the intended publisher account.
-2. Push this directory to the repository's default branch.
-3. In **Settings > Pages**, deploy from the default branch root.
-4. Confirm every URL below is publicly accessible without signing in.
+This repository publishes through `.github/workflows/deploy-pages.yml` on pushes to `main`
+or a manual workflow dispatch. GitHub Pages uses **GitHub Actions** as its deployment source.
+After a release update, verify that the workflow succeeds and all three public pages show
+the new content in both languages.
 
-If the repository is published under `RobinCoderZhao/autolut-legal`, the intended URLs are:
+Public URLs:
 
 - Support URL: `https://robincoderzhao.github.io/autolut-legal/`
 - Privacy Policy URL: `https://robincoderzhao.github.io/autolut-legal/privacy/`
@@ -44,4 +44,23 @@ the App before release.
 - Re-review the pages whenever analytics, accounts, cloud storage, networking, permissions, export
   quota, or purchase behavior changes.
 
-Effective date of the included policies: **August 21, 2026**.
+Effective date of the included policies: **September 10, 2026**.
+
+## Current content baseline
+
+Reviewed against HUEO **1.1.0 (build 4)**, application source commit `2c9d86929a493b27a775794b7b842ec865f0b252`.
+The September 10 update covers external-device photo/video/Live Photo import, the authorized
+Photos video list used by Video to Live Photo, local diagnostics and voluntary sharing,
+capture-metadata handling, and Settings-only links to other apps by the developer.
+
+Implementation evidence in the AutoLUT repository:
+
+- `PlatformClients/OriginalMediaImporter.swift` and `PhotoKitLivePhotoVideoLibrary.swift` — Photos read access and video selection.
+- `PlatformClients/ExternalMediaImportRuntime.swift`, `ExternalMediaPhotoLibraryClient.swift`, and `LivePhotoPhotoLibraryClient.swift` — external import, Photos add access, and capture metadata.
+- `PlatformClients/AppDiagnosticPersistence.swift`, `MetricKitPayloadRedactor.swift`, and `AppDiagnosticPackageExporter.swift` — diagnostic content, retention, redaction, sharing, and cleanup.
+- `AutoLUTFeatures/OtherAppsCatalog.swift` and `OtherAppsView.swift` — bundled recommendations and plain App Store links.
+
+Source paths above are relative to `Packages/AutoLUTKit/Sources/`. Product/permission behavior
+must be checked against code rather than copied from an older policy. This update changes
+feature and data-handling descriptions; existing prices, allowance, subscription, refund,
+and liability terms are unchanged.
