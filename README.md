@@ -14,7 +14,7 @@ The pages support English and Simplified Chinese. They select a language from `?
 ## Publishing
 
 This repository publishes through `.github/workflows/deploy-pages.yml` on pushes to `main`
-or a manual workflow dispatch. GitHub Pages uses **GitHub Actions** as its deployment source.
+or a manual workflow dispatch. The workflow uploads the repository root and deploys it to GitHub Pages.
 After a release update, verify that the workflow succeeds and all three public pages show
 the new content in both languages.
 
