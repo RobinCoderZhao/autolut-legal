@@ -44,14 +44,18 @@ the App before release.
 - Re-review the pages whenever analytics, accounts, cloud storage, networking, permissions, export
   quota, or purchase behavior changes.
 
-Effective date of the included policies: **September 10, 2026**.
+Revision date of the included policies: **October 2, 2026**. The revisions take effect when
+published, subject to any notice or consent required by section 17 of the Terms and applicable law.
+Commit locally first, then push when the App update is ready: a local commit does not publish
+the site, while pushing `main` triggers the existing Pages workflow.
 
 ## Current content baseline
 
-Reviewed against HUEO **1.1.0 (build 4)**, application source commit `2c9d86929a493b27a775794b7b842ec865f0b252`.
-The September 10 update covers external-device photo/video/Live Photo import, the authorized
-Photos video list used by Video to Live Photo, local diagnostics and voluntary sharing,
-capture-metadata handling, and Settings-only links to other apps by the developer.
+The App Album additions were checked against AutoLUT/HUEO source commit
+`28f7a2539f9df8324e01bbda0ccaf6fbbf5a0616`. Existing disclosures for external-device import,
+Photos video selection, local diagnostics, capture metadata, and Settings-only recommendations
+are retained. Feature descriptions apply to App versions that include those features; this
+baseline does not mean the new App version or these revised pages have already been published.
 
 Implementation evidence in the AutoLUT repository:
 
@@ -59,8 +63,13 @@ Implementation evidence in the AutoLUT repository:
 - `PlatformClients/ExternalMediaImportRuntime.swift`, `ExternalMediaPhotoLibraryClient.swift`, and `LivePhotoPhotoLibraryClient.swift` — external import, Photos add access, and capture metadata.
 - `PlatformClients/AppDiagnosticPersistence.swift`, `MetricKitPayloadRedactor.swift`, and `AppDiagnosticPackageExporter.swift` — diagnostic content, retention, redaction, sharing, and cleanup.
 - `AutoLUTFeatures/OtherAppsCatalog.swift` and `OtherAppsView.swift` — bundled recommendations and plain App Store links.
+- `AppContracts/AppPhotoAlbumClient.swift` and `PlatformClients/PhotoKitAppAlbumOrganizer.swift` — full-access-only album membership changes, local album-identifier caching, a bounded in-memory queue, and failure isolation.
+- `AutoLUTFeatures/AppPhotoAlbumSettingsView.swift` — explicit authorization and current permission/status display.
+- `Apps/Shared/AppEnvironment.swift`, `AutoLUTFeatures/ApplicationClients.swift`, `AutoLUTFeatures/AppFeature.swift`, and `PlatformClients/ExternalMediaImportRuntime.swift` — organization after confirmed save records for Live Photos, Photos color exports, and external imports.
+- `assets/site.js` and `.github/workflows/deploy-pages.yml` in this repository — language selection and GitHub Pages hosting; the Privacy Policy identifies the hosting provider's ordinary website requests separately from App processing.
 
-Source paths above are relative to `Packages/AutoLUTKit/Sources/`. Product/permission behavior
+Module paths above are relative to `Packages/AutoLUTKit/Sources/`; `Apps/Shared/` paths are
+relative to the application repository root. Product/permission behavior
 must be checked against code rather than copied from an older policy. This update changes
 feature and data-handling descriptions; existing prices, allowance, subscription, refund,
 and liability terms are unchanged.

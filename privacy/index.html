@@ -24,7 +24,7 @@
 
   <main>
     <article class="language-content" data-language="en">
-      <p class="meta"><strong>Effective date:</strong> September 10, 2026</p>
+      <p class="meta"><strong>Last updated:</strong> October 2, 2026 · <strong>Effective date:</strong> when this revision is published.</p>
 
       <h2>1. Introduction</h2>
       <p>HUEO (the “App,” Chinese name “原画光年”) is an iOS, iPadOS, and macOS application developed by Robin (“we,” “us,” or “our”). It provides Log-video restoration and color processing, video-to-Live-Photo creation, and import of supported external-device media into Photos. This Privacy Policy explains how information is processed when you use the App.</p>
@@ -39,6 +39,7 @@
           <tr><td>Media metadata</td><td>Interpret color, camera or Log identity, timing, orientation, and audio; read available capture time and embedded location for supported import and output workflows</td><td>Local workspace and recovery records where needed</td></tr>
           <tr><td>External-device photos, videos, Live Photo resources, and thumbnails</td><td>Browse the directory you authorize, preview supported items, and import the items you choose into Photos</td><td>Source files remain on the device; thumbnails and preparation copies are cached locally</td></tr>
           <tr><td>External-device access and import records</td><td>Restore authorized access, identify previously imported items, and recover interrupted imports</td><td>Local access bookmarks, device/content fingerprints, and import-recovery records</td></tr>
+          <tr><td>App-album and saved-media identifiers</td><td>Find or create the app album and add newly saved media to it</td><td>For album organization, one album identifier in local App settings and a bounded in-memory queue of saved-media identifiers</td></tr>
           <tr><td>Local diagnostics</td><td>Investigate interruptions and performance problems</td><td>Redacted stage records, session markers, and filtered Apple MetricKit reports; see section 4</td></tr>
           <tr><td>User LUTs, presets, and editing recipes</td><td>Apply and restore your selected looks and processing configuration</td><td>Local application storage</td></tr>
           <tr><td>Workspace and recovery state</td><td>Resume the current task, recover interrupted exports, and keep local libraries consistent</td><td>Local SQLite database and Application Support files</td></tr>
@@ -52,6 +53,10 @@
       <p>You choose videos through Apple's system photo picker. To preserve original media quality and metadata, the App may request Photo Library read/write permission and use the identifier of the item you selected to resolve its original video resource through Apple's Photos framework. The video-to-Live-Photo picker also uses Photos read access to display the videos, thumbnails, duration, dimensions, and capture dates available within your authorization. With limited access, only the items permitted by the system are available. Original video resources are imported for processing after you select them; the App does not upload your library to us.</p>
       <p>When browsing or selecting media stored in iCloud Photos, Apple may download thumbnails or the selected original resource to your device. That transfer is provided by Apple and is governed by your Apple account, device settings, and Apple's privacy terms.</p>
       <p>Saving an exported video, a generated Live Photo, or selected external-device media requests Photos add permission. External-device import does not request full-library read access for duplicate checking. Video-to-Live-Photo recovery may check a previously created item if full read access was already granted.</p>
+      <h3>App Album</h3>
+      <p>In App versions that include <strong>App Album</strong>, newly saved external-device imports, generated Live Photos, and color-processing exports to Photos are automatically added to an app album when Full Photos Access is already granted. The album is created when needed, using “HUEO” or “原画光年” according to the App language, or an existing editable app album is reused. Organization adds existing Photos items to an album; it does not create another media copy or change their capture metadata.</p>
+      <p>This feature needs full Photo Library read/write access, not permission limited to the app album. With add-only or limited access, organization is skipped. You can still save to Photos if adding permission remains allowed. This organization feature does not request full access during launch or media saving. You can request it through <strong>Settings &gt; App Album &gt; Allow Automatic Organization</strong>; if access is limited or denied, the page directs you to system Settings.</p>
+      <p>The organizer looks up the cached album or the two app-name album titles and the identifiers of the newly saved items. It does not scan other media files or automatically add past saves, editor source media, or files-only exports. Album names and album or saved-media identifiers are not sent to us or included in App diagnostic packages. Apple's own Photos and iCloud services remain subject to your system settings.</p>
       <h3>Files</h3>
       <p>You may select videos and LUTs through Apple's system Files picker. The App accesses the selected items within the access granted by the operating system.</p>
       <h3>External devices and capture metadata</h3>
@@ -65,6 +70,7 @@
         <li><strong>Presets and LUTs:</strong> user-created presets and imported LUTs remain until you delete them or remove the App's local data.</li>
         <li><strong>Workspace data:</strong> completing or replacing a session removes related managed work files when they are no longer needed. Uninstalling the App removes its local container, subject to Apple's platform behavior.</li>
         <li><strong>External-device import:</strong> authorization bookmarks, local import fingerprints, and recovery records remain in App storage to support reconnection and interrupted imports. Thumbnail disk caching has a 200 MiB limit. Temporary import copies, extracted Live Photo resources, and preview clips are cleaned up after completion, failure, cancellation, or a later launch.</li>
+        <li><strong>App album:</strong> one device-local album identifier is cached in App settings to support reuse, including after you rename the album. This cache is not stored in Keychain, a shared App group, or an App-managed iCloud settings store. Pending organization uses only a bounded in-memory queue; it is not kept as a durable list for automatic backfilling after the App quits. Existing import/export recovery records keep their own identifiers where needed. Reinstalling the App or losing this cache can make a renamed album unrecognizable, so another app album may be created. Album creation on multiple devices and Apple's synchronization may also result in more than one app album; the App does not merge or delete albums.</li>
         <li><strong>Saved results:</strong> delivered videos, photos, and Live Photos remain in Photos or your chosen destination until you delete them. If iCloud Photos is enabled, Apple may synchronize items saved to Photos under your system settings.</li>
       </ul>
 
@@ -95,11 +101,13 @@
 
       <p><strong>More Imaging Tools</strong> in Settings displays a bundled list of apps by the same developer. It does not detect installed apps, record views or clicks, or use your media or location to choose recommendations. An App Store link opens only when you tap it and contains no user, device, media, location, or attribution identifier. Downloads and purchases for those apps are separate.</p>
       <p>Opening support, legal, or App Store links uses your browser or Apple's services. Contacting support or sharing a diagnostic package uses the mail or sharing service you choose; that service handles the information you send under its own policies.</p>
+      <p>The support and legal pages are hosted on GitHub Pages. Visiting them sends ordinary web requests to GitHub, which may process connection information such as your IP address and browser details under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>. These pages contain no developer-added analytics or advertising scripts. Their language selector uses the browser language or the language choice in the page URL; visiting them does not upload your App media or album records.</p>
 
       <h2>9. Your controls</h2>
       <ul>
         <li>You choose which videos, files, LUTs, and external-device directories the App may access, and control the Photos access available to its video picker.</li>
         <li>You can change Photos permission in system Settings, although original-quality import may stop working without the required access.</li>
+        <li>You can review album-organization permission and the recent status in Settings &gt; App Album. You can rename or remove albums and manage their items in Photos. Removing an app album does not disable organization: a later eligible save may create it again. Removing the App does not remove albums or media already saved to Photos.</li>
         <li>You can remove current tasks, presets, LUTs, and exported files using available App or system controls.</li>
         <li>You can uninstall the App to remove its local container. Keychain records and files already exported outside the container may remain under Apple's platform behavior and your own storage choices.</li>
         <li>You can prepare, share, or delete local diagnostics in Settings &gt; Diagnostics. Preparing a package does not send it to us.</li>
@@ -113,7 +121,7 @@
       <p>The App is not directed to children under 13 and does not require a developer-operated account. We do not knowingly collect children's personal information through a developer-operated service.</p>
 
       <h2>12. Changes to this policy</h2>
-      <p>We may update this policy when the App's features, data practices, or legal requirements change. The current version will be posted on this page with a revised effective date.</p>
+      <p>We may update this policy when the App's features, data practices, or legal requirements change. Revisions are posted here with a last-updated date and take effect when published, unless a later effective date is stated. Descriptions of a feature apply to App versions that include it. Where applicable law requires notice or consent for a change, we will provide it.</p>
 
       <h2>13. Contact</h2>
       <p>For questions about this Privacy Policy, contact:</p>
@@ -121,7 +129,7 @@
     </article>
 
     <article class="language-content" data-language="zh-Hans" hidden>
-      <p class="meta"><strong>生效日期：</strong>2026 年 9 月 10 日</p>
+      <p class="meta"><strong>最后更新：</strong>2026 年 10 月 2 日 · <strong>生效日期：</strong>本次修订公开发布之日。</p>
 
       <h2>1. 简介</h2>
       <p>原画光年（英文名 HUEO，以下简称“本应用”）是由 Robin（以下简称“我们”）开发的 iOS、iPadOS 与 macOS 应用，提供 Log 视频还原和色彩处理、视频转 Live Photo，以及将受支持的外接设备媒体导入系统相册等功能。本隐私政策说明您使用本应用时，相关信息会如何被处理。</p>
@@ -136,6 +144,7 @@
           <tr><td>媒体元数据</td><td>解析色彩、相机或 Log 身份、时间、方向及音频，并为受支持的导入和输出流程读取可用的拍摄时间与媒体内嵌位置</td><td>必要时保存在本地工作区与恢复记录中</td></tr>
           <tr><td>外接设备照片、视频、Live Photo 资源与缩略图</td><td>浏览您授权的目录、预览受支持的项目，并将您选择的项目导入系统相册</td><td>源文件保留在设备上；缩略图和准备副本在本地缓存</td></tr>
           <tr><td>外接设备访问与导入记录</td><td>恢复授权访问、识别本机已导入项目，以及恢复中断的导入</td><td>本地授权书签、设备及内容指纹、导入恢复记录</td></tr>
+          <tr><td>App 相册与已保存媒体标识</td><td>查找或创建 App 相册，并将新保存的媒体加入其中</td><td>相册整理使用本地应用设置中的一个相册标识，以及容量受限的内存待处理媒体标识队列</td></tr>
           <tr><td>本地诊断</td><td>排查中断和性能问题</td><td>脱敏阶段记录、会话标记和经过筛选的 Apple MetricKit 报告；详见第 4 节</td></tr>
           <tr><td>用户 LUT、预设与编辑配方</td><td>应用并恢复您选择的风格和处理配置</td><td>本地应用存储</td></tr>
           <tr><td>工作区与恢复状态</td><td>恢复当前任务、中断的导出，以及保持本地资源库一致</td><td>本地 SQLite 数据库和 Application Support 文件</td></tr>
@@ -149,6 +158,10 @@
       <p>您通过 Apple 的系统照片选择器选择视频。为了保留原始媒体质量和元数据，本应用可能请求照片图库读写权限，并使用您所选项目的标识，通过 Apple Photos 框架解析该项目的原始视频资源。“视频转 Live Photo”的选择页面也会使用照片读取权限，在您的授权范围内展示视频、缩略图、时长、尺寸和拍摄日期。使用有限访问权限时，只能访问系统允许的项目。您选定视频后，应用才导入原始视频资源进行处理；不会向我们上传您的照片图库。</p>
       <p>浏览或选择存储在 iCloud 照片中的媒体时，Apple 可能将缩略图或所选原始资源下载到您的设备。该传输由 Apple 提供，并受您的 Apple 账户、设备设置和 Apple 隐私条款约束。</p>
       <p>保存导出视频、生成的 Live Photo 或所选外接设备媒体时，会请求照片添加权限。外接设备导入不会为了去重请求完整图库读取权限。视频转 Live Photo 的恢复流程仅在已获得完整读取权限时，才可能核对先前创建的项目。</p>
+      <h3>App 相册</h3>
+      <p>在包含<strong>“App 相册”</strong>的应用版本中，已授予完整照片库访问时，新保存的外接设备导入媒体、生成的 Live Photo 和调色后导出到系统照片的作品会自动加入专属相册。没有相册时按应用语言创建“原画光年”或“HUEO”，已有可编辑的 App 相册时复用。整理只把现有 Photos 项目加入相册，不会再复制一份媒体，也不会改变其拍摄元数据。</p>
+      <p>此功能需要完整照片库读写权限，并非仅访问 App 相册的权限。只有仅添加或有限访问权限时，会跳过整理；只要系统仍允许添加照片，原有保存功能可以继续使用。相册整理不会在启动或保存媒体时申请完整访问。您可以在<strong>“设置 &gt; App 相册 &gt; 允许自动整理”</strong>中主动申请；有限或拒绝状态下，页面提供前往系统设置的指引。</p>
+      <p>整理只查询已缓存的相册或上述两个应用名称的相册，以及新保存项目的标识，不扫描其他媒体文件，也不会自动整理历史作品、编辑器中的原片或仅导出到文件的内容。相册名称、相册及待整理媒体标识不会发送给我们，也不进入应用诊断包。Apple 自身的照片和 iCloud 服务仍按您的系统设置运行。</p>
       <h3>文件</h3>
       <p>您可以通过 Apple 的系统文件选择器选择视频和 LUT。本应用在操作系统授予的访问范围内读取这些项目。</p>
       <h3>外接设备与拍摄元数据</h3>
@@ -162,6 +175,7 @@
         <li><strong>预设与 LUT：</strong>用户创建的预设和导入的 LUT 会保留到您主动删除或移除本应用本地数据。</li>
         <li><strong>工作区数据：</strong>完成或替换会话后，本应用会在不再需要时清理相关工作文件。卸载应用会按照 Apple 平台行为移除本地应用容器。</li>
         <li><strong>外接设备导入：</strong>授权书签、本机导入指纹和恢复记录保存在应用存储中，用于重新连接和恢复中断的导入。缩略图磁盘缓存上限为 200 MiB。导入临时副本、拆分的 Live Photo 资源和预览片段，会在完成、失败、取消或后续启动时清理。</li>
+        <li><strong>App 相册：</strong>本地应用设置缓存一个本机相册标识，用于复用相册，包括您改名后的相册。该缓存不放入钥匙串、共享 App Group 或由本应用管理的 iCloud 设置存储。待整理的媒体标识只保存在容量受限的内存队列中，不作为退出后自动补齐的持久列表保存；现有导入或导出恢复记录仍按各自需要保存标识。重装应用或缓存丢失后，已经改名的相册可能无法识别，因而可能创建另一个 App 相册。多设备同时建册及 Apple 同步也可能产生多个 App 相册；本应用不会自动合并或删除相册。</li>
         <li><strong>保存结果：</strong>成功交付的视频、照片和 Live Photo 会保留在系统相册或您选择的位置，直至您删除。启用 iCloud 照片时，Apple 可能根据系统设置同步已保存到相册的项目。</li>
       </ul>
 
@@ -192,11 +206,13 @@
 
       <p>设置中的<strong>“更多影像工具”</strong>展示随应用内置的同一开发者应用列表，不检测其他应用是否安装，不记录展示或点击，也不使用您的媒体或位置筛选推荐。只有您点击后才会打开 App Store 链接，链接不包含用户、设备、媒体、位置或归因标识。其他应用的下载与购买相互独立。</p>
       <p>打开支持、法律文档或 App Store 链接时，会使用浏览器或 Apple 服务。联系支持或分享诊断包时，会使用您选择的邮件或分享服务；该服务会按照自身政策处理您发送的信息。</p>
+      <p>支持与法律页面由 GitHub Pages 托管。访问时会向 GitHub 发出普通网页请求；GitHub 可能按照其<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">隐私声明</a>处理 IP 地址、浏览器信息等连接数据。这些页面没有开发者添加的分析或广告脚本；语言切换仅使用浏览器语言或网址中的语言选择。访问页面不会上传您的应用媒体或相册记录。</p>
 
       <h2>9. 您的控制权</h2>
       <ul>
         <li>由您选择本应用可以访问的视频、文件、LUT 和外接设备目录，并控制视频选择页面可用的照片读取范围。</li>
         <li>您可以在系统设置中更改照片权限，但缺少所需权限时，原始质量导入可能无法工作。</li>
+        <li>您可以在“设置 &gt; App 相册”查看整理权限和最近状态，并在系统照片中改名、移除相册或管理其中的项目。移除 App 相册不会关闭整理功能，后续符合条件的新保存可能再次创建相册。卸载本应用不会移除已保存到系统照片的相册或媒体。</li>
         <li>您可以通过本应用或系统提供的控制删除当前任务、预设、LUT 和导出文件。</li>
         <li>您可以卸载本应用以移除其本地容器。按照 Apple 平台行为，钥匙串记录和已导出到容器外的文件可能继续保留。</li>
         <li>您可以在“设置 &gt; 诊断”中准备、分享或删除本地诊断；准备诊断包不会向我们发送该文件。</li>
@@ -210,7 +226,7 @@
       <p>本应用并非面向 13 岁以下儿童，也不要求创建开发者账户。我们不会通过开发者运营的服务故意收集儿童个人信息。</p>
 
       <h2>12. 政策变更</h2>
-      <p>当应用功能、数据处理方式或法律要求发生变化时，我们可能更新本政策。当前版本会发布在本页面，并更新生效日期。</p>
+      <p>当应用功能、数据处理方式或法律要求发生变化时，我们可能更新本政策。修订会在本页面注明最后更新日期，并在公开发布时生效，除非另行说明更晚的生效日期。功能说明适用于包含该功能的应用版本。适用法律要求通知或同意时，我们会提供相应通知或取得同意。</p>
 
       <h2>13. 联系我们</h2>
       <p>如对本隐私政策有疑问，请联系：</p>
