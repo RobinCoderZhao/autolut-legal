@@ -1,15 +1,33 @@
-# HUEO / 原画光年 Legal Pages
+# HUEO / 原画光年 product, support and legal pages
 
-Static bilingual support and legal pages for **HUEO (原画光年)**.
+Static English and Simplified Chinese pages for **HUEO (原画光年)** on GitHub Pages.
 
 ## Pages
 
 - `index.html` — product support and contact page
 - `privacy/index.html` — Privacy Policy / 隐私政策
 - `privacy/terms.html` — Terms of Use / 使用条款
+- `en/` and `zh/` — product and App Store download pages
+- `en/guide/luna-i-log/` and `zh/guide/luna-i-log/` — camera-specific getting-started guides
 
-The pages support English and Simplified Chinese. They select a language from `?lang=en` or
+The support and legal pages select a language from `?lang=en` or
 `?lang=zh-Hans`, then fall back to the browser language.
+
+Product and guide pages use separate, directly linkable language URLs. Regenerate their static HTML
+and the sitemap with `python3 .github/scripts/build-product.py` after editing the localized copy
+in `.github/product/`. Site visitors need no build service. All product imagery, styles and scripts
+are served from `assets/product/`. The support and legal documents retain their own CSS and language script.
+
+The website download links use the HUEO campaign URLs generated in App Store Connect. A visitor
+entering a product or guide page with `?src=bili` or `?src=youtube` keeps that source on the way to
+the App Store, including across language switches. Other values fall back to the corresponding
+website campaign. The site uses no analytics service or attribution storage.
+
+The iPhone, iPad and Mac illustrations are crops of HUEO's published App Store images for those
+platforms. The comparison shows the same time position in two published iPad screenshots
+(restoration and export); it makes no claim that the first is raw camera footage. The 20-second
+English and Chinese walkthroughs are captioned demonstrations made from the published screenshots.
+Video playback is opt-in. Download links use HUEO's App Store ID, `6804096727`.
 
 ## Publishing
 
@@ -23,6 +41,8 @@ Public URLs:
 - Support URL: `https://robincoderzhao.github.io/autolut-legal/`
 - Privacy Policy URL: `https://robincoderzhao.github.io/autolut-legal/privacy/`
 - Terms of Use URL: `https://robincoderzhao.github.io/autolut-legal/privacy/terms.html`
+- Marketing URL (English): `https://robincoderzhao.github.io/autolut-legal/en/`
+- Marketing URL (Simplified Chinese): `https://robincoderzhao.github.io/autolut-legal/zh/`
 
 If the publisher account or repository name changes, update these URLs in App Store Connect and in
 the App before release.
@@ -30,6 +50,7 @@ the App before release.
 ## App Store Connect mapping
 
 - **Support URL**: the root support page
+- **Marketing URL**: the product page for the selected localization
 - **Privacy Policy URL**: the privacy page
 - **App description / subscription metadata**: link to the Terms of Use where appropriate
 - Keep Apple's Standard EULA as the licensed-application EULA unless a separately reviewed custom
