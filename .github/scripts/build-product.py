@@ -74,10 +74,20 @@ def render(language, guide):
         content = f'''<main id="content" class="guide">
   <header class="guide-head wrap"><a data-product-link class="back" href="{home}">← {escape(c["guideBack"])}</a>
     <h1>{escape(c["guideHeading"])}</h1><p class="lede">{escape(c["guideIntro"])}</p></header>
+  <section class="demo wrap" id="camera-test" aria-label="{escape(c["comparisonTitle"])}">
+    <figure class="demo-player">
+      <video width="1280" height="720" controls playsinline preload="none" poster="{media}luna-ilog-same-frame.webp" aria-label="{escape(c["comparisonTitle"])}" aria-describedby="comparison-caption">
+        <source src="{media}luna-ilog-same-frame.mp4" type="video/mp4">
+        <a href="{media}luna-ilog-same-frame.mp4">{escape(c["comparisonTitle"])}</a>
+      </video>
+      <figcaption id="comparison-caption">{escape(c["comparisonCaption"])}</figcaption>
+    </figure>
+    <a class="watch" href="{escape(c["comparisonDiscussionUrl"])}">{escape(c["comparisonDiscussion"])} <span aria-hidden="true">↗</span></a>
+  </section>
+  <div class="paper"><div class="guide-layout wrap"><ol class="guide-steps">{"".join(steps)}</ol></div></div>
   <section class="demo wrap" id="demo" aria-label="{escape(c["demoTitle"])}">
     {demo_video}
   </section>
-  <div class="paper"><div class="guide-layout wrap"><ol class="guide-steps">{"".join(steps)}</ol></div></div>
   <section class="wrap guide-cta"><div><h2>{escape(c["guideEnding"])}</h2><p>{escape(c["guideFree"])}</p></div>{store_button()}</section>
 </main>'''
     else:

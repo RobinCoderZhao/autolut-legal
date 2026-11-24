@@ -53,6 +53,10 @@
   "guideBack": "原画光年产品页",
   "guideHeading": "在 iPhone 上还原 Luna Ultra 的 I-Log 视频",
   "guideIntro": "准备一段在相机中以 I-Log 模式录制的原始视频。下面以 Luna Ultra 的非 RAW、10-bit HEVC 素材为例。",
+  "comparisonTitle": "对比 Luna Ultra 的 I-Log 原片和原画光年的 Rec.709 成片",
+  "comparisonCaption": "左侧是相机的 10-bit I-Log 原片，右侧是同一帧在原画光年中导出的 Rec.709 SDR。先看蓝天与石墙的交界，再看阴天水面上的黄色渡轮。",
+  "comparisonDiscussion": "去 B 站看滑动分界版，聊聊你的调色设置",
+  "comparisonDiscussionUrl": "https://www.bilibili.com/video/BV1UGyoziEmA/",
   "guideSteps": [
     ["选择相机原片", "将存储卡接入 iPhone，或先将视频保存到系统「照片」。在 HUEO 首页点「从文件导入」或「从照片导入」，选择这一批素材。", "需要先把整张卡里的照片和视频归档时，首页还有独立的「导入到照片」工具。"],
     ["核对 I-Log 输入", "在编辑器的「还原」面板核对输入方案。若自动识别结果不确定，回看相机录制设置，再选择与 Luna Ultra 对应的 I-Log / Rec.2020。", "普通色彩模式拍摄的视频已经有对比度，保留其正确输入解释，以免重复套用 Log 转换。"],

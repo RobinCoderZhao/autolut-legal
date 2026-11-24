@@ -53,6 +53,10 @@
   "guideBack": "HUEO product page",
   "guideHeading": "Restore Luna Ultra I-Log footage on iPhone",
   "guideIntro": "Start with an original clip recorded in I-Log on your camera. This walkthrough covers non-RAW, 10-bit HEVC footage from an Insta360 Luna Ultra.",
+  "comparisonTitle": "Compare Luna Ultra I-Log with HUEO’s Rec.709 export",
+  "comparisonCaption": "The left half shows the original 10-bit I-Log. The right half shows the same frame exported from HUEO in Rec.709 SDR. Watch the blue beside the sunlit stone, then the yellow ferry against the water.",
+  "comparisonDiscussion": "Watch the vertical version and join the discussion on YouTube",
+  "comparisonDiscussionUrl": "https://www.youtube.com/shorts/bhRCGdLaIE0",
   "guideSteps": [
     ["Choose the camera originals", "Connect your memory card to the iPhone, or save your clips to Photos first. In HUEO, choose From Files or From Photos and select the clips you want to restore.", "To copy photos and videos from an external device into your library first, use the separate Import to Photos tool on the home screen."],
     ["Check the I-Log input", "Open Restoration and check the input profile. If detection is uncertain, consult the camera’s recording settings and select the matching Luna Ultra I-Log / Rec.2020 profile.", "Clips shot in a standard color mode already have contrast. Keep the correct input interpretation for those clips to avoid applying a second conversion."],
