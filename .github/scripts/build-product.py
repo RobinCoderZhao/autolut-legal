@@ -11,7 +11,11 @@ GUIDE = "guide/luna-i-log/"
 FORMATS = (
     ("Apple", "Apple Log / Apple Log 2"), ("Insta360", "I-Log"),
     ("Nikon", "N-Log"), ("Sony", "S-Log3"),
-    ("DJI", "D-Log / D-Log2"), ("Canon", "Canon Log 2 / 3"),
+    ("DJI", "D-Log / D-Log 2"),
+    ("DJI Osmo Pocket 3", "D-Log M"),
+    ("DJI Osmo Pocket 4", "D-Log"),
+    ("DJI Osmo Pocket 4P", "D-Log / D-Log 2"),
+    ("Canon", "Canon Log 2 / 3"),
     ("Fujifilm", "F-Log / F-Log2"),
 )
 

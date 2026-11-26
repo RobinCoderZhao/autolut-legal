@@ -33,8 +33,8 @@ Video playback is opt-in. Download links use HUEO's App Store ID, `6804096727`.
 
 This repository publishes through `.github/workflows/deploy-pages.yml` on pushes to `main`
 or a manual workflow dispatch. The workflow uploads the repository root and deploys it to GitHub Pages.
-After a release update, verify that the workflow succeeds and all three public pages show
-the new content in both languages.
+After publishing, verify the deployed English and Chinese product pages and guides. Check both
+languages on the shared support, privacy and terms pages as well.
 
 Public URLs:
 
@@ -65,21 +65,23 @@ the App before release.
 - Re-review the pages whenever analytics, accounts, cloud storage, networking, permissions, export
   quota, or purchase behavior changes.
 
-Revision date of the included policies: **October 2, 2026**. The revisions take effect when
-published, subject to any notice or consent required by section 17 of the Terms and applicable law.
+The Privacy Policy was revised on **November 26, 2026**. The Terms of Use were last revised on
+**October 2, 2026**. Revisions take effect on publication, subject to the change provisions of
+the relevant document and applicable law.
 Commit locally first, then push when the App update is ready: a local commit does not publish
 the site, while pushing `main` triggers the existing Pages workflow.
 
 ## Current content baseline
 
-The App Album additions were checked against AutoLUT/HUEO source commit
-`28f7a2539f9df8324e01bbda0ccaf6fbbf5a0616`. Existing disclosures for external-device import,
-Photos video selection, local diagnostics, capture metadata, and Settings-only recommendations
-are retained. Feature descriptions apply to App versions that include those features; this
-baseline does not mean the new App version or these revised pages have already been published.
+The Pocket compatibility table, manual profile search and recent choices were checked against
+AutoLUT/HUEO **1.1.8 (build 11)**, source commit `63a23896678ff8058dae36777622350312c20187`.
+The product and support copy identifies the version that introduces these features. The App Album
+baseline is source commit `28f7a2539f9df8324e01bbda0ccaf6fbbf5a0616`.
 
 Implementation evidence in the AutoLUT repository:
 
+- `DomainModels/DJIPocketRecording.swift`, `MediaInspection/DJIPocketMetadataReader.swift`, and `InputColorTransformKit/InputTransformCatalog.swift` — original recording metadata and the supported Pocket model/mode pairs.
+- `AutoLUTFeatures/ManualLogProfileCatalog.swift`, `ManualLogProfilePicker.swift` in the same directory, and `AutoLUTFeatures/AppFeature.swift` — up to two manually applied profile IDs in device preferences and an in-memory search.
 - `PlatformClients/OriginalMediaImporter.swift` and `PhotoKitLivePhotoVideoLibrary.swift` — Photos read access and video selection.
 - `PlatformClients/ExternalMediaImportRuntime.swift`, `ExternalMediaPhotoLibraryClient.swift`, and `LivePhotoPhotoLibraryClient.swift` — external import, Photos add access, and capture metadata.
 - `PlatformClients/AppDiagnosticPersistence.swift`, `MetricKitPayloadRedactor.swift`, and `AppDiagnosticPackageExporter.swift` — diagnostic content, retention, redaction, sharing, and cleanup.
@@ -87,7 +89,7 @@ Implementation evidence in the AutoLUT repository:
 - `AppContracts/AppPhotoAlbumClient.swift` and `PlatformClients/PhotoKitAppAlbumOrganizer.swift` — full-access-only album membership changes, local album-identifier caching, a bounded in-memory queue, and failure isolation.
 - `AutoLUTFeatures/AppPhotoAlbumSettingsView.swift` — explicit authorization and current permission/status display.
 - `Apps/Shared/AppEnvironment.swift`, `AutoLUTFeatures/ApplicationClients.swift`, `AutoLUTFeatures/AppFeature.swift`, and `PlatformClients/ExternalMediaImportRuntime.swift` — organization after confirmed save records for Live Photos, Photos color exports, and external imports.
-- `assets/site.js` and `.github/workflows/deploy-pages.yml` in this repository — language selection and GitHub Pages hosting; the Privacy Policy identifies the hosting provider's ordinary website requests separately from App processing.
+- `assets/site.js`, `assets/product/product.js`, `.github/scripts/build-product.py` and the Pages workflow in this repository document language selection, shared App Store campaign codes and website hosting.
 
 Module paths above are relative to `Packages/AutoLUTKit/Sources/`; `Apps/Shared/` paths are
 relative to the application repository root. Product/permission behavior

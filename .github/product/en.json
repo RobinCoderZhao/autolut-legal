@@ -32,7 +32,7 @@
   "phoneAlt": "HUEO on iPhone showing a video preview and its I-Log / Rec.2020 restoration profile",
   "phoneCaption": "iPhone · Log restoration",
   "formatHeading": "Start with your camera profile",
-  "formatText": "Check the recording mode for each clip. Support depends on the camera, codec and color tags. Review the suggested profile or choose the matching input yourself.",
+  "formatText": "Starting in 1.1.8, HUEO can identify the Osmo Pocket modes listed here from compatible originals with the necessary recording metadata. To choose a profile yourself, search by brand, model or Log format, or pick one from Recently Selected.",
   "workspaceHeading": "Fine-tune color on a larger screen",
   "workspaceText": "Balance shadows, midtones and highlights with color wheels. Check your scopes before choosing an output format. Your media is processed on your device.",
   "desktopAlt": "HUEO on Mac with the media browser, video preview and color grading controls",
@@ -59,7 +59,7 @@
   "comparisonDiscussionUrl": "https://www.youtube.com/shorts/bhRCGdLaIE0",
   "guideSteps": [
     ["Choose the camera originals", "Connect your memory card to the iPhone, or save your clips to Photos first. In HUEO, choose From Files or From Photos and select the clips you want to restore.", "To copy photos and videos from an external device into your library first, use the separate Import to Photos tool on the home screen."],
-    ["Check the I-Log input", "Open Restoration and check the input profile. If detection is uncertain, consult the camera’s recording settings and select the matching Luna Ultra I-Log / Rec.2020 profile.", "Clips shot in a standard color mode already have contrast. Keep the correct input interpretation for those clips to avoid applying a second conversion."],
+    ["Check the I-Log input", "Open Restore and check the input profile. If you recorded in I-Log and need to choose a profile, select I-Log / Rec.2020. In HUEO 1.1.8 and later, search for Luna Ultra or I-Log to find it.", "Clips shot in a standard color mode already have contrast. Keep the correct input interpretation for those clips to avoid applying a second conversion."],
     ["Compare a frame, then grade the batch", "Pause on a frame and compare with the original. Inspect skies, skin tones or deep shadows. Adjust exposure or white balance, then apply the shared adjustments to other clips.", "Each clip keeps its own technical input transform. Preview clips from different lighting conditions before exporting the batch."],
     ["Save the results to Photos", "In Export, choose your output settings and Photos as the destination. After saving, inspect the capture date on the finished video in Photos.", "Keeping the date requires a usable timestamp in the source. Sort your library by capture date to find the result under the original shoot day."]
   ],
